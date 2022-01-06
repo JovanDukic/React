@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+html{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(169,169,198,1) 25%, rgba(115,115,213,1) 35%, rgba(90,136,222,1) 49%, rgba(115,115,213,1) 81%, rgba(0,212,255,1) 100%);
+}
+
 .navbar{
   display: flex;
   justify-content: center;
@@ -15,10 +20,23 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.emptyDiv{
+  text-align: center;
   width: 100vw;
   height: 100vh;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(169,169,198,1) 25%, rgba(115,115,213,1) 35%, rgba(90,136,222,1) 49%, rgba(115,115,213,1) 81%, rgba(0,212,255,1) 100%);
+}
+
+.emptyTitle{
+  margin-top: 200px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: 5px dashed black;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+  font-size: 7em;
 }
 
 .navbar a{
@@ -47,12 +65,18 @@
   border-width: 0px;
 }
 
+.cart{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 100px;
+}
+
 .product_1{
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 150px 30px 250px auto auto;
-  justify-content: space-between;
   margin: 20px;
+  align-self: center;
   border-style: solid;
   border-width: 2px;
   border-color: rgb(0, 0, 0);
@@ -66,9 +90,9 @@
 .product_2{
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 150px 30px 250px auto auto;
-  justify-content: space-between;
+  grid-template-rows: 150px 30px auto;
   margin: 20px;
+  align-self: center;
   border-style: solid;
   border-width: 2px;
   border-color: rgb(0, 0, 0);
@@ -104,4 +128,42 @@
 .money{
   display: flex;
   flex-direction: row;
+}
+
+.boughtProducts{
+  display: flex;
+  flex-direction: column;
+}
+
+.productsTitle{
+  align-self: center;
+}
+
+.formTitle{
+  text-align: center;
+}
+
+.form-div{
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 10px;
+  margin-top: 100px;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 20px;
+}
+
+.submitButton{
+  grid-column: 1 / span 2;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 20px;
+}
+
+label{
+  margin-right: 10px;
+  font-weight: bolder;
 }

@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [productNumber, setproductNumber] = useState(0);
-  const [boughtProducts, setBoughtProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
   const [products] = useState([
     {
       id: 1,
@@ -42,9 +42,8 @@ function App() {
   ]);
 
   function refreshCart() {
-    let newProducts = products.filter((product) => product.amount > 0);
-    setBoughtProducts(newProducts);
-    console.log(boughtProducts);
+    setCartProducts(products.filter((product) => product.amount > 0));
+    console.log(cartProducts);
   }
 
   function addToCart(productID) {
@@ -96,7 +95,9 @@ function App() {
         />
         <Route
           path="/cart"
-          element={<Cart boughtProducts={boughtProducts} />}
+          element={
+            <Cart boughtProducts={cartProducts} productNumber={productNumber} />
+          }
         />
       </Routes>
     </BrowserRouter>

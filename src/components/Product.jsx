@@ -7,7 +7,9 @@ function Product({ product, addToCart, removeFromCart, flag }) {
     <div className={flag === 1 ? "product_1" : "product_2"}>
       <img src={images[product.imgIndex]} alt="Product-1" className="image" />
       <h3>{product.title}</h3>
-      <div className="desc">{product.desc}</div>
+
+      {flag === 1 ? <div className="desc">{product.desc}</div> : <></>}
+
       <div className="money">
         <h3 className="price">Price: {product.price}$</h3>
         <h3 className="price">Total: {product.total}$</h3>
